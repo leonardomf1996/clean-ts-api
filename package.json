@@ -4,6 +4,14 @@
   "main": "index.js",
   "author": "Leonardo <leonardomf1996@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
+    "test:verbose": "jest --passWithNoTests --runInBand",
+    "test:unit": "npm test -- --watch -c jest-unit-config.js",
+    "test:integration": "npm test -- --watch -c jest-integration-config.js",
+    "test:staged": "npm test --findRelatedTests",
+    "test:ci": "npm test -- --coverage"
+  },
   "devDependencies": {
     "@types/jest": "^29.1.2",
     "@types/node": "^18.8.5",
@@ -20,9 +28,5 @@
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1",
     "typescript": "*"
-  },
-  "scripts": {
-    "test": "jest --passWithNoTests --watch",
-    "test:staged": "jest --passWithNoTests"
-  }
+  }  
 }
